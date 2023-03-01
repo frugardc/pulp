@@ -54,6 +54,7 @@ class HiGHS_CMD(LpSolver_CMD):
         gapAbs=None,
         threads=None,
         logPath=None,
+        mipHeuristicEffort=None
     ):
         """
         :param bool mip: if False, assume LP even if integer variables
@@ -77,7 +78,7 @@ class HiGHS_CMD(LpSolver_CMD):
             options=options,
             path=path,
             keepFiles=keepFiles,
-            mipHeuristicEffort,
+            mipHeuristicEffort=mipHeuristicEffort,
             threads=threads,
             logPath=logPath,
         )
