@@ -77,6 +77,7 @@ class HiGHS_CMD(LpSolver_CMD):
             options=options,
             path=path,
             keepFiles=keepFiles,
+            mipHeuristicEffort,
             threads=threads,
             logPath=logPath,
         )
@@ -111,6 +112,8 @@ class HiGHS_CMD(LpSolver_CMD):
             file_options.append(f"mip_rel_gap={self.optionsDict['gapRel']}")
         if "gapAbs" in self.optionsDict:
             file_options.append(f"mip_abs_gap={self.optionsDict['gapAbs']}")
+        if "mipHeuristicEffort" in self.optionsDict:
+            file_options.append(f"mip_heuristic_effort={self.optionsDict['mipHeuristicEffort']}")
         if "logPath" in self.optionsDict:
             highs_log_file = self.optionsDict["logPath"]
         else:
